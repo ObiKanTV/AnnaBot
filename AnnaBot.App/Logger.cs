@@ -1,19 +1,19 @@
-﻿using Discord;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AnnaBot.App
+﻿namespace AnnaBot.App
 {
-    public class Logger
+    public class LoggingService
     {
-        public Task Log(LogMessage msg)
+        public LoggingService(DiscordSocketClient client, CommandService command)
+        {
+            client.Log += LogAsync;
+            command.Log += LogAsync;
+
+        }
+        public Task LogAsync(LogMessage msg)
         {
             Console.WriteLine(msg.ToString());
             return Task.CompletedTask;
         }
+
 
     }
 }

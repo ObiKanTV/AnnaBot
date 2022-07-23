@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AnnaBot.App.Logging
+namespace AnnaBot.App
 {
     public class Logger
     {

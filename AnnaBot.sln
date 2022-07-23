@@ -5,6 +5,10 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnnaBot.App", "AnnaBot.App\AnnaBot.App.csproj", "{AB9350B3-0416-45E8-99A1-A50D1FB19304}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnnaBot.Core", "AnnaBot.Core\AnnaBot.Core.csproj", "{B9006276-7ECF-4AA5-9135-A22F1AC8F075}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnnaBot.Data", "AnnaBot.Data\AnnaBot.Data.csproj", "{52B42681-9827-4C20-AAF5-C81129A4A82A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{AB9350B3-0416-45E8-99A1-A50D1FB19304}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB9350B3-0416-45E8-99A1-A50D1FB19304}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB9350B3-0416-45E8-99A1-A50D1FB19304}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9006276-7ECF-4AA5-9135-A22F1AC8F075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9006276-7ECF-4AA5-9135-A22F1AC8F075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9006276-7ECF-4AA5-9135-A22F1AC8F075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9006276-7ECF-4AA5-9135-A22F1AC8F075}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52B42681-9827-4C20-AAF5-C81129A4A82A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52B42681-9827-4C20-AAF5-C81129A4A82A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52B42681-9827-4C20-AAF5-C81129A4A82A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52B42681-9827-4C20-AAF5-C81129A4A82A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

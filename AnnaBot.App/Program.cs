@@ -24,8 +24,6 @@ public class Program
 
 		_client.Log += log.Log;
 
-
-		//This needs to be retrieved from somewhere else. Client Secret or Decrypted somehow.
 		var section = config.GetSection(nameof(StartupConfig));
 		var startupConfig = section.Get<StartupConfig>();
 		var token = startupConfig.DiscordToken;

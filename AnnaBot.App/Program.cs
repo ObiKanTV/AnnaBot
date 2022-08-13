@@ -23,10 +23,9 @@ public class Program
 
         var section = config.GetSection(nameof(StartupConfig));
         var startupConfig = section.Get<StartupConfig>();
-        var token = startupConfig.DiscordToken;
 
 
-        await _client.LoginAsync(Discord.TokenType.Bot, token);
+        await _client.LoginAsync(Discord.TokenType.Bot, token: startupConfig.DiscordToken as string);
         await _client.StartAsync();
 
         _client.MessageUpdated += MessageUpdated;

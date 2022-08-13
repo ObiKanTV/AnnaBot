@@ -1,5 +1,6 @@
 ﻿using AnnaBot.App;
 using AnnaBot.Core.Models.Configurations;
+using Discord.Commands;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -8,6 +9,7 @@ public class Program
     private DiscordSocketClient? _client;
     private LoggingService? log;
     private IConfiguration? config;
+    private CommandService? _commandService;
 
     public static Task Main(string[] args) => new Program().MainAsync();
 
@@ -19,14 +21,17 @@ public class Program
             .AddUserSecrets<Program>()
             .Build();
 
+        _commandService = new CommandService();
         _client = new DiscordSocketClient();
-        log = new(_client, new CommandService());
+        log = new(_client, _commandService);
 
         var services = CreateServices();
       
         var section = config.GetSection(nameof(StartupConfig));
         var startupConfig = section.Get<StartupConfig>();
 
+        var handler = new CommandHandler(_client, _commandService, services,log);
+        await handler.SetupAsync();
 
         await _client.LoginAsync(Discord.TokenType.Bot, token: startupConfig.DiscordToken as string);
         await _client.StartAsync();

@@ -1,6 +1,7 @@
 ﻿using AnnaBot.App;
 using AnnaBot.Core.Models.Configurations;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 public class Program
 {
@@ -21,6 +22,8 @@ public class Program
         _client = new DiscordSocketClient();
         log = new(_client, new CommandService());
 
+        var services = CreateServices();
+      
         var section = config.GetSection(nameof(StartupConfig));
         var startupConfig = section.Get<StartupConfig>();
 
@@ -42,5 +45,12 @@ public class Program
         // If the message was not in the cache, downloading it will result in getting a copy of `after`.
         var message = await before.GetOrDownloadAsync();
         Console.WriteLine($"{message} -> {after}");
+    }
+    static IServiceProvider CreateServices()
+    {
+        var collection = new ServiceCollection()
+            /*.AddSingleton()*/;
+
+        return collection.BuildServiceProvider();
     }
 }

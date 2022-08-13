@@ -25,14 +25,6 @@ namespace AnnaBot.App
             
             _client.MessageReceived += HandleCommandAsync;
         }
-        public async Task InstallCommandsAsync()
-        {
-            _client.MessageReceived += HandleCommandAsync;
-
-          
-            await _commands.AddModulesAsync(assembly: Assembly.GetEntryAssembly(),
-                                            services: _services);
-        }
         public async Task OnCommandExecutedAsync(Optional<CommandInfo> command, ICommandContext context, IResult result)
         {
             // We can tell the user what went wrong

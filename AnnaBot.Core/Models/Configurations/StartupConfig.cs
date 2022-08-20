@@ -1,4 +1,4 @@
-﻿namespace AnnaBot.Core.Models.Configurations
+﻿namespace AnnaBot.Domain.Models.Configurations
 {
     public class StartupConfig
     {

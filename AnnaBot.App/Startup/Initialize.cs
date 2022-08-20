@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace AnnaBot.App.Startup
 {
-	public class Initialize
+	public class ServiceInitializer
 	{
 		private readonly CommandService _commands;
 		private readonly DiscordSocketClient _client;
 
-		public Initialize(CommandService commands = null, DiscordSocketClient client = null)
+		public ServiceInitializer(CommandService commands = null, DiscordSocketClient client = null)
 		{
 			_commands = commands ?? new CommandService();
 			_client = client ?? new DiscordSocketClient();

@@ -24,5 +24,10 @@
                 Console.WriteLine(logMessage.ToString());
             }
         }
+        public Task Log(string logmessage)
+        {
+            Console.WriteLine($"{DateTime.UtcNow} | Message: {logmessage}");
+            return Task.CompletedTask;
+        }
     }
 }

@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AnnaBot.Core.Models.Entities.Shared;
+namespace AnnaBot.Domain.Models.Entities.Shared;
 
-public class EntityBase
+public abstract class EntityBase
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

@@ -1,12 +1,14 @@
 ﻿using AnnaBot.App;
 using AnnaBot.App.Startup;
+using AnnaBot.Application.Services;
+using AnnaBot.Domain.Interfaces.Services;
 using AnnaBot.Domain.Models.Configurations;
 using Microsoft.Extensions.Configuration;
 
 public class Program
 {
     private DiscordSocketClient? _client;
-    private LoggingService? log;
+    private ILoggingService? log;
     private IConfiguration? config;
     private CommandService? _commandService;
 
@@ -52,7 +54,7 @@ public class Program
     {
         _commandService = new CommandService();
         _client = new DiscordSocketClient();
-        log = new(_client, _commandService);
+        log = new LoggingService(_client, _commandService);
         var init = new ServiceInitializer(_commandService, _client);
         var services = init.BuildServiceProvider();
         return services;

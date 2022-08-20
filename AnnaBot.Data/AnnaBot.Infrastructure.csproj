@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="External\ExternalAPI\" />
     <Folder Include="Migrations\" />
-    <Folder Include="External\" />
     <Folder Include="Seed\" />
   </ItemGroup>
 

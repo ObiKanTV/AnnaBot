@@ -1,15 +1,17 @@
-﻿using System.Reflection;
+﻿using AnnaBot.Application.Services;
+using AnnaBot.Domain.Interfaces.Services;
+using System.Reflection;
 
-namespace AnnaBot.App
+namespace AnnaBot.App.Startup
 {
     public class CommandHandler
     {
         private readonly CommandService _commands;
         private readonly IServiceProvider _services;
         private readonly DiscordSocketClient _client;
-        private readonly LoggingService _log; 
+        private readonly ILoggingService _log;
 
-        public CommandHandler(DiscordSocketClient client, CommandService commands, IServiceProvider services, LoggingService log)
+        public CommandHandler(DiscordSocketClient client, CommandService commands, IServiceProvider services, ILoggingService log)
         {
             _commands = commands;
             _services = services;
@@ -20,9 +22,9 @@ namespace AnnaBot.App
         public async Task SetupAsync()
         {
             await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), _services);
-            
+
             _commands.CommandExecuted += OnCommandExecutedAsync;
-            
+
             _client.MessageReceived += HandleCommandAsync;
         }
         public async Task OnCommandExecutedAsync(Optional<CommandInfo> command, ICommandContext context, IResult result)
@@ -33,7 +35,7 @@ namespace AnnaBot.App
                 await context.Channel.SendMessageAsync(result.ErrorReason);
             }
 
-           
+
             var commandName = command.IsSpecified ? command.Value.Name : "A command";
             await _log.LogAsync(new LogMessage(LogSeverity.Info,
                 "CommandExecution",

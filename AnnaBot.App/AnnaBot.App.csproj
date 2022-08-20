@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AnnaBot.Application\AnnaBot.Application.csproj" />
     <ProjectReference Include="..\AnnaBot.Core\AnnaBot.Domain.csproj" />
     <ProjectReference Include="..\AnnaBot.Data\AnnaBot.Infrastructure.csproj" />
   </ItemGroup>
@@ -30,5 +31,10 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
    </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modules\Games\" />
+    <Folder Include="Modules\Music\" />
+    <Folder Include="Modules\Util\" />
+  </ItemGroup>
 
 </Project>

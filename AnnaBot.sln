@@ -3,11 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnnaBot.App", "AnnaBot.App\AnnaBot.App.csproj", "{AB9350B3-0416-45E8-99A1-A50D1FB19304}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnnaBot.App", "AnnaBot.App\AnnaBot.App.csproj", "{AB9350B3-0416-45E8-99A1-A50D1FB19304}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnnaBot.Core", "AnnaBot.Core\AnnaBot.Core.csproj", "{B9006276-7ECF-4AA5-9135-A22F1AC8F075}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnnaBot.Domain", "AnnaBot.Core\AnnaBot.Domain.csproj", "{B9006276-7ECF-4AA5-9135-A22F1AC8F075}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnnaBot.Data", "AnnaBot.Data\AnnaBot.Data.csproj", "{52B42681-9827-4C20-AAF5-C81129A4A82A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnnaBot.Infrastructure", "AnnaBot.Data\AnnaBot.Infrastructure.csproj", "{52B42681-9827-4C20-AAF5-C81129A4A82A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnnaBot.API", "AnnaBot.API\AnnaBot.API.csproj", "{2B92D758-EC74-470C-9A35-1717FA96528D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnnaBot.Application", "AnnaBot.Application\AnnaBot.Application.csproj", "{A9AA5D91-D1A6-4065-83FF-B40349203A3F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AnnaBot.Core", "AnnaBot.Core", "{DCB29F4F-87A2-41A1-B5F2-3F63CA7FDB1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AnnaBot.Infrastructure", "AnnaBot.Infrastructure", "{BD597F31-AF71-462B-847A-9B43122EE092}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AnnaBot.Presentation", "AnnaBot.Presentation", "{C5B163E5-0964-467F-A781-A610C3749532}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +37,24 @@ Global
 		{52B42681-9827-4C20-AAF5-C81129A4A82A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52B42681-9827-4C20-AAF5-C81129A4A82A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52B42681-9827-4C20-AAF5-C81129A4A82A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B92D758-EC74-470C-9A35-1717FA96528D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B92D758-EC74-470C-9A35-1717FA96528D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B92D758-EC74-470C-9A35-1717FA96528D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B92D758-EC74-470C-9A35-1717FA96528D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9AA5D91-D1A6-4065-83FF-B40349203A3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9AA5D91-D1A6-4065-83FF-B40349203A3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9AA5D91-D1A6-4065-83FF-B40349203A3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9AA5D91-D1A6-4065-83FF-B40349203A3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AB9350B3-0416-45E8-99A1-A50D1FB19304} = {C5B163E5-0964-467F-A781-A610C3749532}
+		{B9006276-7ECF-4AA5-9135-A22F1AC8F075} = {DCB29F4F-87A2-41A1-B5F2-3F63CA7FDB1F}
+		{52B42681-9827-4C20-AAF5-C81129A4A82A} = {BD597F31-AF71-462B-847A-9B43122EE092}
+		{2B92D758-EC74-470C-9A35-1717FA96528D} = {C5B163E5-0964-467F-A781-A610C3749532}
+		{A9AA5D91-D1A6-4065-83FF-B40349203A3F} = {DCB29F4F-87A2-41A1-B5F2-3F63CA7FDB1F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {56D65102-5F11-4DEB-A095-BF03EDD03E16}

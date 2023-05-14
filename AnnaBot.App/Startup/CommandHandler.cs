@@ -43,8 +43,11 @@ namespace AnnaBot.App.Startup
         }
         private async Task HandleCommandAsync(SocketMessage messageParam)
         {
+            Console.WriteLine("HandleCommandAsync called"); // Debug output
             var message = messageParam as SocketUserMessage;
             if (message is null) return;
+
+            Console.WriteLine($"Received message: {message.Content}"); // Debug output
 
             int argPos = 0;
 
@@ -59,9 +62,9 @@ namespace AnnaBot.App.Startup
                 context: context,
                 argPos: argPos,
                 services: _services
-                );
-
+            );
         }
+
 
     }
 }

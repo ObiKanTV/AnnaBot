@@ -35,7 +35,7 @@ public class Program
             await _client.LoginAsync(Discord.TokenType.Bot, token: startupConfig.DiscordToken as string);
             await _client.StartAsync();
 
-            _client.MessageUpdated += MessageUpdated;
+            _client.MessageUpdated += async (before, after, channel) => await MessageUpdated(before, after, channel);
             _client.Ready += () =>
             {
                 Console.WriteLine("Bot is connected!");
